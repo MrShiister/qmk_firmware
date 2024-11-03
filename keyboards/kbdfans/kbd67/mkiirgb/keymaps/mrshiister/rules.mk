@@ -1,0 +1,1 @@
+# DYNAMIC_MACRO_ENABLE = yes # doesn't work on 0.18.5
