@@ -45,4 +45,8 @@
 #define RGBLIGHT_VAL_STEP 8
 #define RGBLIGHT_SLEEP
 #endif
+
+#define USB_POLLING_INTERVAL_MS 1
+#define QMK_KEYS_PER_SCAN 8
+
 #endif

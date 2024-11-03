@@ -134,6 +134,7 @@ bool is_oneshot_layer_active(void) { return get_oneshot_layer_state(); }
  *
  * FIXME: needs doc
  */
+extern int need_report;
 void send_keyboard_report(void) {
     keyboard_report->mods = real_mods;
     keyboard_report->mods |= weak_mods;
@@ -154,6 +155,7 @@ void send_keyboard_report(void) {
 
 #endif
     host_keyboard_send(keyboard_report);
+	need_report=0;
 }
 
 /** \brief Get mods

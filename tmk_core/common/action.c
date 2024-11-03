@@ -709,6 +709,7 @@ void process_action(keyrecord_t *record, action_t action) {
  *
  * FIXME: Needs documentation.
  */
+extern int need_report;
 void register_code(uint8_t code) {
     if (code == KC_NO) {
         return;
@@ -771,7 +772,8 @@ void register_code(uint8_t code) {
 #endif
             {
                 add_key(code);
-                send_keyboard_report();
+				need_report=1;
+                // send_keyboard_report();
             }
         }
     else if

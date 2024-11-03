@@ -30,6 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sendchar.h"
 #include "eeconfig.h"
 #include "action_layer.h"
+#include "action_util.h"
 #ifdef BACKLIGHT_ENABLE
 #    include "backlight.h"
 #endif
@@ -271,6 +272,7 @@ void keyboard_init(void) {
  *
  * This is repeatedly called as fast as possible.
  */
+int need_report;
 void keyboard_task(void) {
     static matrix_row_t matrix_prev[MATRIX_ROWS];
     static uint8_t      led_status    = 0;
@@ -322,6 +324,9 @@ void keyboard_task(void) {
     if (!keys_processed)
 #endif
         action_exec(TICK);
+
+		if (need_report)
+			send_keyboard_report();
 
 MATRIX_LOOP_END:
 
