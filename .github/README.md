@@ -43,11 +43,16 @@ is needed to use `/dev`.
 ```
 
 ### kbd67 - Copy firmware to mass storage
-- does not need flashing
+- Technically does not need flashing
+- Use **QMK Toolbox** on Windows
+  - Copy and eject behaviour on Linux bricks the keyboard sometimes
+- Consider zeroing EEPROM.BIN (1023 bytes of 0s) if erratic behaviour is observed
+
+#### Feeling risky?
 - Boot into bootloader
 - Mount the device (e.g. `sudo mount /dev/sde /mnt/usb`)
 - Copy the compiled `kbdfans_kbd67_mkiirgb_v3_mrshiister.bin` onto `FLASH.BIN`
-- Use checksum to verify the copies! or you risk bricking
+- Use checksum to verify the copies!
 - Eject the keyboard with `sudo eject /mnt/usb`. Keyboard RGB should light up.
 
 ## Changelog
@@ -62,7 +67,13 @@ is needed to use `/dev`.
 - keyboards/kbdfans/kbd67/mkiirgb/keymaps/mrshiister/*
 
 ### QMK firmware update
-#### 0.31.9
+#### v3.1.0 (0.31.9)
+- Date: 4/2/2026
+- Use oneshot Ctrl, Meta, Alt keys
+- Replace previous Caps_Lock key-combo with oneshot toggle
+- Add layer lock key in layer 2 and 3
+- Fix layer lighting on kbd67
+#### v3.0.0 (0.31.9)
 - Date: 29/1/2026
 - Change Caps Lock behaviour:
   - Hold to shift to layer 2
@@ -72,14 +83,14 @@ is needed to use `/dev`.
 - Enable console printing for debugging
 - Remove and disable macros
 - kbd67 layer lighting still doesn't work
-#### 0.18.5
+#### v2.0.0 (0.18.5)
 - Date: 9/9/2022
 - `TT(x)` keycode acts like `#define TAPPING_TOGGLE 1` so I replaced it with `MO(x)`
 - Single tap Right-Shift for DEL
 - Chords are ok
 - Enabling Dynamic Macros rule breaks the kbd67
 
-#### 0.7.106
+#### v1.0.0 (0.7.106)
 - Date: 2019
 - Double-tap Right-Shift for DEL
 - Chords are ok
@@ -112,3 +123,13 @@ is needed to use `/dev`.
     - Might be a NTFS problem
 - `qmk flash my_specified.hex` is bugged - please copy the hex file to the root folder of qmk before flashing or you will have an empty firmware
 - `qmk flash` through building and flashing directly, however, works.
+
+### Keyboard not working on Windows
+After a flash, the DZ60 was observed to be non-responsive on Windows. The
+keyboard worked on Linux, BIOS, and the Windows Recovery Environment.
+
+Reason: The installed driver for the keyboard became invalid.
+
+Solution: Find the USB Composite Device corresponding to the keyboard and uninstall the driver.
+Then unplug and plug the keyboard.
+

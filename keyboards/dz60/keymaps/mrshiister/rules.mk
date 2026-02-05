@@ -16,6 +16,7 @@ NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = yes      # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
+LAYER_LOCK_ENABLE = yes     # Enable locking of the current layer
 PROGRAMMABLE_BUTTON_ENABLE = no
 DYNAMIC_MACRO_ENABLE = no
 VELOCIKEY_ENABLE = yes
