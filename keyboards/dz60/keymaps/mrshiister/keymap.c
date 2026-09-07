@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     LAYOUT_60_ansi(
         KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-        KC_TRNS,    UG_HUEU,    UG_HUED,    UG_SATU,    UG_SATD,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,     KC_NO,      DB_TOGG,    QK_BOOT,    KC_NO,
+        KC_TRNS,    UG_HUEU,    UG_HUED,    UG_SATU,    UG_SATD,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,     KC_NO,      DB_TOGG,    QK_BOOT,    KC_SYRQ,
         KC_NO,      VK_TOGG,    UG_TOGG,    UG_NEXT,    UG_PREV,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,     KC_NO,      KC_NO,        SAVE_RGB,
         KC_NO,      UG_VALU,    UG_VALD,    UG_SPDU,    UG_SPDD,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,         KC_NO,             KC_NO,
         KC_NO,      QK_LAYER_LOCK, KC_NO,                   KC_NO,                              KC_NO,      KC_NO,      KC_NO,      KC_NO

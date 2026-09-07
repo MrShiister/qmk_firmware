@@ -35,11 +35,11 @@ Via is a similar tool to the QMK Configurator
 ## Flashing
 
 ### DZ60 - Flash Firmware through QMK CLI
-Run a docker container directly with the given script as a privileged container
-is needed to use `/dev`.
+A privileged docker container is needed to use `/dev`. No additional setup is
+needed if using the devcontainer.
 
 ```bash
-    ./util/docker_build.sh dz60:mrshiister:flash
+qmk flash -km mrshiister -kb dz60
 ```
 
 ### kbd67 - Copy firmware to mass storage

@@ -1,3 +1,8 @@
 {
-    "build": { "dockerfile": "Dockerfile" }
+    "build": { "dockerfile": "Dockerfile" },
+    "privileged": true,
+    "mounts": [
+      { "source": "/dev/", "target": "/dev/", "type": "bind" },
+      { "source": "/run/udev/", "target": "/run/udev/", "type": "bind" }
+    ],
 }
